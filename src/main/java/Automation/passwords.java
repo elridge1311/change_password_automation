@@ -13,11 +13,11 @@ public class passwords extends Hooks  {
     public passwords() throws IOException {
         super();
     }
-
-    String[] userNames = {"auto_ll","auto_md","auto_uu","auto_bcsr","auto_bcc","auto_bcsrm","auto_adj","auto_cont","auto_vp","auto_ccsr","auto_ccsrm","autoClaims_adj_JuniorA","autoClaims_adj_MiddleA","autoClaims_adj_SeniorA","autoClaims_adj_MiddleB","autoClaims_adj_SeniorB@gmail.com","autoClaims_adj_SeniorLimit","autoClaims_adj_SeniorLimitMgr"};
-    //String[] userNames = {"autoClaims_adj_SeniorLimit"};
-    static String oldPassword = "Oneshield1";
-    static String newPassword = "Oneshield2";
+//"auto_ll""auto_uu"
+    String[] userNames = {"auto_md","auto_bcsr","auto_bcc","auto_bcsrm","auto_adj","auto_cont","auto_vp","auto_ccsr","auto_ccsrm","autoClaims_adj_JuniorA","autoClaims_adj_MiddleA","autoClaims_adj_SeniorA","autoClaims_adj_MiddleB","autoClaims_adj_SeniorB@gmail.com","autoClaims_adj_SeniorLimit","autoClaims_adj_SeniorLimitMgr"};
+//    String[] userNames = {"auto_md"};
+    static String oldPassword = "Oneshield3";
+    static String newPassword = "Oneshield4";
 
     public void checkExistingPassword() throws IOException, InterruptedException {
         Locators locators = new Locators();
@@ -68,7 +68,7 @@ public class passwords extends Hooks  {
             DataField(locators, username, oldPassword);
             locators.LoginBtn().click();
             System.out.println();
-            System.out.println(username + " is not able to login with " + oldPassword + " and " + newPassword);
+            //System.out.println(username + " is not able to login with " + oldPassword + " and " + newPassword);
             Thread.sleep(2000);
             return true;
         }
@@ -101,13 +101,13 @@ public class passwords extends Hooks  {
         {
             System.out.println();
             locators.CurrentPassword().sendKeys("0");
-            System.out.println(username);
+            //System.out.println(username);
             locators.ChangeUsername().sendKeys(username);
             Thread.sleep(2000);
-            System.out.println(oldPassword);
+           // System.out.println(oldPassword);
             locators.CurrentPassword().clear();
             locators.CurrentPassword().sendKeys(oldPassword);
-            System.out.println(newPassword);
+            //System.out.println(newPassword);
             locators.NewPassword().sendKeys(newPassword);
             Thread.sleep(2000);
             locators.ConfirmPassword().sendKeys(newPassword);
